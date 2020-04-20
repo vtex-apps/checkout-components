@@ -1,0 +1,11 @@
+{
+  "name": "checkout-components",
+  "private": true,
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/react": "^16.9.34"
+  },
+  "dependencies": {
+    "react": "^16.13.1"
+  }
+}
