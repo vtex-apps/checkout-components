@@ -1,3 +1,17 @@
+.groupOption {
+  min-height: 3.625rem;
+}
+
+@media only screen and (min-width: 40em) {
+  .groupOption {
+    min-height: 4.125rem;
+  }
+}
+
 .optionDivider:last-of-type {
   display: none;
+}
+
+.caretWrapper {
+  height: 1.5rem;
 }
