@@ -6,6 +6,8 @@ import styles from './GroupOption.css'
 
 interface OptionProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   selected?: boolean
+  caretAlign?: 'start' | 'center' | 'end'
+  lean?: boolean
 }
 
 const GroupOption: React.FC<OptionProps> = ({
@@ -13,20 +15,33 @@ const GroupOption: React.FC<OptionProps> = ({
   onClick = () => {},
   children,
   selected = false,
+  caretAlign = 'start',
+  lean = false,
 }) => {
   return (
     <Fragment>
       <button
         className={classnames(
-          'w-100 tl pointer db lh-copy c-on-base bg-base hover-bg-action-secondary ph5 pv4 pv5-ns bn flex justify-between',
-          className
+          styles.groupOption,
+          className,
+          'w-100 tl pointer db lh-copy c-on-base bg-base hover-bg-action-secondary ph5 pv5-ns bn flex items-center justify-between',
+          {
+            pv4: !lean,
+            pv3: lean,
+          }
         )}
         onClick={onClick}
         role="option"
         aria-selected={selected}
       >
         {children}
-        <span className="c-action-primary dib ml5">
+        <span
+          className={classnames(
+            styles.caretWrapper,
+            'c-action-primary ml5 inline-flex items-center',
+            `self-${caretAlign}`
+          )}
+        >
           <IconCaretRight />
         </span>
       </button>
