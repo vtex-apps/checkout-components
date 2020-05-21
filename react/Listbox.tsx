@@ -38,21 +38,22 @@ export const ListboxButton: React.FC<ButtonProps & { className?: string }> = ({
   )
 }
 
-export const ListboxPopover = forwardRef<HTMLElement, PopoverProps>(
-  function ListboxPopover({ className, ...props }, ref) {
-    return (
-      <Popover
-        {...props}
-        ref={ref}
-        className={classNames(
-          className,
-          styles.popover,
-          'bg-base pv3 mt2 br2 ba bw1 b--muted-4 asbolute outline-0'
-        )}
-      />
-    )
-  }
-)
+export const ListboxPopover = forwardRef<
+  HTMLElement,
+  Omit<PopoverProps, 'unstable_observableRefs'>
+>(function ListboxPopover({ className, ...props }, ref) {
+  return (
+    <Popover
+      {...props}
+      ref={ref}
+      className={classNames(
+        className,
+        styles.popover,
+        'bg-base pv3 mt2 br2 ba bw1 b--muted-4 asbolute outline-0'
+      )}
+    />
+  )
+})
 
 export const ListboxList: React.FC<ListProps & { className?: string }> = ({
   className,
