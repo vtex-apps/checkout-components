@@ -12,6 +12,7 @@ import {
 } from '@reach/listbox'
 import classNames from 'classnames'
 import React, { forwardRef } from 'react'
+import { IconCaretDown } from 'vtex.styleguide'
 
 import styles from './Listbox.css'
 
@@ -23,27 +24,11 @@ export const ListboxInput = forwardRef<HTMLDivElement, InputProps>(
   }
 )
 
-const ArrowDownIcon: React.FC<{ size?: number; color?: string }> = ({
-  size = 16,
-  color = 'currentColor',
-}) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-  >
-    <g fill={color}>
-      <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
-    </g>
-  </svg>
-)
-
 export const ListboxButton: React.FC<ButtonProps & { className?: string }> = ({
   className,
   arrow = (
-    <div className="c-action-primary flex items-center ml2">
-      <ArrowDownIcon size={16} />
+    <div className="c-action-primary">
+      <IconCaretDown />
     </div>
   ),
   ...props
