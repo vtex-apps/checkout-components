@@ -51,9 +51,10 @@ export const ListboxButton: React.FC<ButtonProps & { className?: string }> = ({
   return (
     <Button
       {...props}
+      arrow={arrow}
       className={classNames(
         className,
-        'h-100 flex items-center bg-base c-on-base ba bw1 b--muted-4 hover-b--muted-3 bt-0 bl-0 bb-0 pl5 pr3 outline-0 pointer'
+        'h-100 flex items-center bg-base c-on-base ba bw1 br2 b--muted-4 hover-b--muted-3 pv4 pv3-ns pl4 pr5 outline-0 pointer'
       )}
     />
   )
