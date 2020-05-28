@@ -1,0 +1,27 @@
+:root {
+  --reach-listbox: 1;
+}
+
+.option:not([aria-selected="true"]) {
+  background-color: transparent;
+}
+
+.option:not([data-current=""]) {
+  padding-left: 2.125rem;
+}
+
+.option[data-current=""] {
+  padding-left: 0;
+}
+
+.option[data-current=""] .selectedIcon {
+  display: block;
+}
+
+.popover {
+  box-shadow: 0px 1px 16px rgba(46, 46, 46, 0.12);
+}
+
+.button [data-reach-listbox-arrow] {
+  margin-left: auto;
+}
