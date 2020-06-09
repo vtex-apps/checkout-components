@@ -45,7 +45,7 @@ export const ListboxButton: React.FC<ButtonProps & {
         styles.button,
         className,
         'h-100 flex items-center bg-base c-on-base pv4 pv3-ns pl4 pr5 outline-0 pointer',
-        { 'ba bw1 br2 b--muted-4 hover-b--muted-3 ': !plain }
+        { 'ba bw1 br2 b--muted-4 hover-b--muted-3': !plain }
       )}
     />
   )
