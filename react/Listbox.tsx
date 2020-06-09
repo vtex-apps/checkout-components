@@ -24,10 +24,11 @@ export const ListboxInput = forwardRef<HTMLDivElement, InputProps>(
   }
 )
 
-export const ListboxButton: React.FC<ButtonProps & {
-  className?: string
-  plain: boolean
-}> = ({
+export const ListboxButton: React.FC<ButtonProps &
+  React.HTMLAttributes<HTMLSpanElement> & {
+    className?: string
+    plain: boolean
+  }> = ({
   className,
   plain = false,
   arrow = (
