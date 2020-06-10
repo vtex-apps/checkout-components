@@ -24,13 +24,15 @@ export const ListboxInput = forwardRef<HTMLDivElement, InputProps>(
   }
 )
 
-export const ListboxButton: React.FC<ButtonProps &
-  React.HTMLAttributes<HTMLSpanElement> & {
-    className?: string
-    plain: boolean
-  }> = ({
+interface ListboxButtonProps
+  extends ButtonProps,
+    Omit<React.HTMLAttributes<HTMLSpanElement>, 'children'> {
+  variation?: 'default' | 'plain'
+}
+
+export const ListboxButton: React.FC<ListboxButtonProps> = ({
   className,
-  plain = false,
+  variation = 'default',
   arrow = (
     <div className="c-action-primary">
       <IconCaretDown />
@@ -46,7 +48,7 @@ export const ListboxButton: React.FC<ButtonProps &
         styles.button,
         className,
         'h-100 flex items-center bg-base c-on-base pv4 pv3-ns pl4 pr5 outline-0 pointer',
-        { 'ba bw1 br2 b--muted-4 hover-b--muted-3': !plain }
+        { 'ba bw1 br2 b--muted-4 hover-b--muted-3': variation === 'default' }
       )}
     />
   )
