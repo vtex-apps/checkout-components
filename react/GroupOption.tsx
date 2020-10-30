@@ -1,7 +1,7 @@
 import classnames from 'classnames'
 import React, { Fragment } from 'react'
-import { IconCaretRight, Divider } from 'vtex.styleguide'
 
+import IconCaretRight from './IconCaretRight'
 import styles from './GroupOption.css'
 
 interface OptionProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -24,7 +24,7 @@ const GroupOption: React.FC<OptionProps> = ({
         className={classnames(
           styles.groupOption,
           className,
-          'w-100 tl pointer db lh-copy c-on-base bg-base hover-bg-action-secondary ph5 pv5-ns bn flex items-center justify-between',
+          'w-100 tl pointer db lh-copy c-on-base bg-base ph0 pv5-ns flex items-center justify-between bl-0 bt-0 br-0 bb b--muted-4',
           {
             pv4: !lean,
             pv3: lean,
@@ -45,9 +45,6 @@ const GroupOption: React.FC<OptionProps> = ({
           <IconCaretRight />
         </span>
       </button>
-      <div className={classnames(styles.optionDivider, 'mh5')}>
-        <Divider orientation="horizontal" />
-      </div>
     </Fragment>
   )
 }
