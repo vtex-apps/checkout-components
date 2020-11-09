@@ -24,7 +24,7 @@ const GroupOption: React.FC<OptionProps> = ({
         className={classnames(
           styles.groupOption,
           className,
-          'w-100 tl pointer db lh-copy c-on-base bg-base ph0 pv5-ns flex items-center justify-between bl-0 bt-0 br-0 bb b--muted-4',
+          'w-100 tl pointer db lh-copy c-on-base bg-base ph5 ph0-ns pv5-ns flex items-center justify-between bl-0 bt-0 br-0 bb b--muted-4',
           {
             pv4: !lean,
             pv3: lean,
