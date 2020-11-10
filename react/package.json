@@ -7,7 +7,7 @@
     "@types/node": "^13.13.1",
     "@types/react": "^16.9.34",
     "vtex.render-runtime": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.124.3/public/@types/vtex.render-runtime",
-    "vtex.styleguide": "https://lucas--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.styleguide@9.133.1+build1604672669/public/@types/vtex.styleguide"
+    "vtex.styleguide": "https://lucas--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.styleguide@9.133.1+build1604941427/public/@types/vtex.styleguide"
   },
   "dependencies": {
     "@reach/listbox": "^0.10.2",
