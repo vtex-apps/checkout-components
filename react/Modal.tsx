@@ -44,7 +44,7 @@ const Modal = forwardRef<
 
   const containerRef = useRef<HTMLDivElement>(null)
 
-  const ref = utils.useMergeRef<HTMLDivElement | null>(
+  const ref = utils.useMergeRefs<HTMLDivElement | null>(
     fadeEffectRef,
     containerRef,
     forwardedRef
