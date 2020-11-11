@@ -1,13 +1,16 @@
 import classnames from 'classnames'
 import React, { Fragment } from 'react'
+import { Divider } from 'vtex.styleguide'
 
 import IconCaretRight from './IconCaretRight'
 import styles from './GroupOption.css'
+import { useListContext } from './ListGroup'
 
 interface OptionProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   selected?: boolean
   caretAlign?: 'start' | 'center' | 'end'
   lean?: boolean
+  isLast?: boolean
 }
 
 const GroupOption: React.FC<OptionProps> = ({
@@ -17,14 +20,17 @@ const GroupOption: React.FC<OptionProps> = ({
   selected = false,
   caretAlign = 'start',
   lean = false,
+  isLast = false,
 }) => {
+  const borderPosition = useListContext()?.borderPosition ?? 'top'
+
   return (
     <Fragment>
       <button
         className={classnames(
           styles.groupOption,
           className,
-          'w-100 tl pointer db lh-copy c-on-base bg-base ph5 ph0-ns pv5-ns flex items-center justify-between bl-0 bt-0 br-0 bb b--muted-4',
+          'w-100 tl pointer db lh-copy c-on-base bg-base hover-bg-action-secondary ph5-ns pv5-ns flex items-center justify-between bn',
           {
             pv4: !lean,
             pv3: lean,
@@ -45,6 +51,11 @@ const GroupOption: React.FC<OptionProps> = ({
           <IconCaretRight />
         </span>
       </button>
+      {(!isLast || borderPosition === 'top') && (
+        <div className="w-100 pr5 pr0-ns pl5-ns">
+          <Divider orientation="horizontal" />
+        </div>
+      )}
     </Fragment>
   )
 }
