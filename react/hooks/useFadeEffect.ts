@@ -102,15 +102,34 @@ export const useFadeEffect = (visible: boolean) => {
       elementRef.current = node
 
       if (node != null) {
-        node.addEventListener?.('transitionend', endTransition)
-        node.addEventListener?.('webkitTransitionEnd', endTransition)
+        const handleTransitionEnd = (evt: Event) => {
+          if (evt.target !== node) {
+            return
+          }
+
+          endTransition()
+        }
+
+        node.addEventListener?.('transitionend', handleTransitionEnd)
+        node.addEventListener?.('webkitTransitionEnd', handleTransitionEnd)
 
         if (prevVisible.current === true) {
           startTransition(true)
         }
       } else if (prevNode != null) {
-        prevNode.removeEventListener?.('transitionend', endTransition)
-        prevNode.removeEventListener?.('webkitTransitionEnd', endTransition)
+        const handleTransitionEnd = (evt: Event) => {
+          if (evt.target !== prevNode) {
+            return
+          }
+
+          endTransition()
+        }
+
+        prevNode.removeEventListener?.('transitionend', handleTransitionEnd)
+        prevNode.removeEventListener?.(
+          'webkitTransitionEnd',
+          handleTransitionEnd
+        )
       }
     },
     [endTransition, startTransition]

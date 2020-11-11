@@ -1,7 +1,3 @@
-.modal :global(.vtex-modal__overlay) {
-  animation-name: none !important;
-}
-
 .modal :global(.vtex-modal__modal) {
   transition-property: top;
   transition-duration: 200ms;
@@ -13,10 +9,14 @@
 }
 
 .closed :global(.vtex-modal__modal) {
-  top: 100%;
+  top: calc(100% - 2rem);
 }
 
 @media only screen and (max-width: 40em) {
+  .modal :global(.vtex-modal__overlay) {
+    animation-name: none !important;
+  }
+
   .modal :global(.vtex-modal__modal) {
     opacity: 1 !important;
   }

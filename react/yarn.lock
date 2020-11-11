@@ -179,9 +179,9 @@ tslib@^1.11.2:
   version "8.124.3"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.124.3/public/@types/vtex.render-runtime#8158e34bd24b4a51cb5d463eeef4e37af626c2d5"
 
-"vtex.styleguide@https://lucas--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.styleguide@9.133.1+build1605029012/public/@types/vtex.styleguide":
+"vtex.styleguide@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.133.1/public/@types/vtex.styleguide":
   version "9.133.1"
-  resolved "https://lucas--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.styleguide@9.133.1+build1605029012/public/@types/vtex.styleguide#7bb54757768e68d63ee7901432dd79012599d98a"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.133.1/public/@types/vtex.styleguide#d81b246a0942248f0fc1a71ad9fe20928e6ddb5f"
 
 warning@^4.0.3:
   version "4.0.3"

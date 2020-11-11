@@ -82,6 +82,4 @@ const Modal = forwardRef<
   )
 })
 
-const teste = <Modal />
-
 export default Modal
