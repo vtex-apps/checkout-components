@@ -37,7 +37,7 @@ export const useFadeEffect = (visible: boolean) => {
   const { isTransitioning, shouldBeVisible } = state
 
   const timeoutIdRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const rafIdRef = useRef<number | null>(null)
+  const rafIdRef = useRef<ReturnType<typeof requestAnimationFrame> | null>(null)
 
   useEffect(
     () => () => {
