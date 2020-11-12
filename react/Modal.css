@@ -1,0 +1,47 @@
+.modal :global(.vtex-modal__modal) {
+  transition-property: top;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+.open :global(.vtex-modal__modal) {
+  top: 30%;
+}
+
+.closed :global(.vtex-modal__modal) {
+  top: calc(100% - 2rem);
+}
+
+@media only screen and (max-width: 40em) {
+  .modal :global(.vtex-modal__overlay) {
+    animation-name: none !important;
+  }
+
+  .modal :global(.vtex-modal__modal) {
+    opacity: 1 !important;
+  }
+
+  .modal :global(.vtex-modal__modal) {
+    margin: 0;
+    width: 100%;
+    height: 70%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    align-self: stretch;
+  }
+}
+
+@media only screen and (min-width: 40em) {
+  .modal :global(.vtex-modal__modal) {
+    transition-property: opacity;
+    top: auto;
+  }
+
+  .open :global(.vtex-modal__modal) {
+    opacity: 1;
+  }
+
+  .closed :global(.vtex-modal__modal) {
+    opacity: 0;
+  }
+}
