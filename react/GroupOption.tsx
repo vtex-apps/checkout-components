@@ -30,7 +30,7 @@ const GroupOption: React.FC<OptionProps> = ({
         className={classnames(
           styles.groupOption,
           className,
-          'w-100 tl pointer db lh-copy c-on-base bg-base hover-bg-action-secondary ph5-ns pv5-ns flex items-center justify-between bn',
+          'w-100 tl pointer db lh-copy c-on-base bg-base hover-bg-action-secondary ph5 pv5-ns flex items-center justify-between bn',
           {
             pv4: !lean,
             pv3: lean,
@@ -52,7 +52,7 @@ const GroupOption: React.FC<OptionProps> = ({
         </span>
       </button>
       {(!isLast || borderPosition === 'top') && (
-        <div className="w-100 pr5 pr0-ns pl5-ns">
+        <div className="w-100 pr5 pr0-ns pl5">
           <Divider orientation="horizontal" />
         </div>
       )}
