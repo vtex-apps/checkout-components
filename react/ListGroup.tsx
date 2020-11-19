@@ -2,14 +2,14 @@ import classnames from 'classnames'
 import React, { useContext, useMemo, createContext } from 'react'
 
 interface ListContext {
-  borderPosition: 'top' | 'bottom'
+  borderPosition: 'top' | 'bottom' | 'none'
 }
 
 const ctx = createContext<ListContext | undefined>(undefined)
 
 export const useListContext = () => useContext(ctx)
 
-const ListGroup: React.FC<{ borderPosition?: 'top' | 'bottom' }> = ({
+const ListGroup: React.FC<{ borderPosition?: 'top' | 'bottom' | 'none' }> = ({
   children,
   borderPosition = 'top',
 }) => {
@@ -21,9 +21,10 @@ const ListGroup: React.FC<{ borderPosition?: 'top' | 'bottom' }> = ({
   )
 
   return (
-    <div className="nh5 nh0-ns pl5 pl0-ns" role="group">
+    <div className="nh5 nh0-ns" role="group">
       <div
-        className={classnames('b--muted-4', {
+        className={classnames({
+          'b--muted-4': borderPosition !== 'none',
           bt: borderPosition === 'top',
           bb: borderPosition === 'bottom',
         })}
